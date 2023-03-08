@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <!-- 상단바 custom -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:contentInsetStart="0dp"
+                app:logo="@drawable/ic_baseline_pets_24"
+                app:popupTheme="@style/Theme.TitleBar.PopupOverlay"
+                app:subtitle="@string/subtitle"
+                app:subtitleTextColor="@color/white"
+                app:title="@string/app_name"
+                app:titleTextColor="@color/white" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- 사용자 정보 출력 Card view -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardview_user_info"
+            style="@style/CardViewStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/icon_size_big"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_baseline_account_circle_24" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/user_name"
+                    style="@style/notosan_bold_Style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:maxLines="1"
+                    android:hint="댕댕이 이름 입력" />
+
+                <!--            <TextView-->
+                <!--                android:id="@+id/user_name"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_gravity="center"-->
+                <!--                android:layout_marginLeft="10dp"-->
+                <!--                style="@style/notosan_bold_Style"-->
+                <!--                android:text="@string/pet_name" />-->
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 디바이스 정보 출력 Card view -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardview_device_info"
+            style="@style/CardViewStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardview_user_info">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-2dp"
+                    android:layout_marginBottom="-6dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        style="@style/icon_size_medium"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_baseline_devices_other_24" />
+
+                    <TextView
+                        style="@style/notosan_medium_Style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp"
+                        android:text="디바이스 정보" />
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/listview_device_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    tools:listitem="@layout/listview_item_device_info" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 데이터 수집 환경경 Cad view -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardview_collect_env"
+            style="@style/CardViewStyle1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardview_device_info">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-2dp"
+                    android:layout_marginBottom="-6dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageview_collet_env"
+                        style="@style/icon_size_medium"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_baseline_settings_input_antenna_24" />
+
+                    <LinearLayout
+                        android:id="@+id/linearlayout_collect_env"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@+id/imageview_collet_env"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/notosan_medium_Style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="데이터 수집을 위한 환경 체크" />
+
+                        <TextView
+                            style="@style/notosan_demilight_Style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="모두 On이 표시되도록 해주세요" />
+                    </LinearLayout>
+
+                    <ImageButton
+                        android:id="@+id/imagebutton_refresh"
+                        style="@style/icon_size_small"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/refresh_selector" />
+                </RelativeLayout>
+
+                <ListView
+                    android:id="@+id/listview_collect_env"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    tools:listitem="@layout/listview_item_collect_env" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- 데이터 수집 Button -->
+        <Button
+            android:id="@+id/button"
+            style="@style/notosan_bold_Style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="6dp"
+            android:padding="0.5dp"
+            android:text="데이터 수집 시작"
+            app:layout_constraintBottom_toTopOf="@+id/btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn"
+            style="@style/notosan_bold_Style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:padding="0.5dp"
+            android:text="통계"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

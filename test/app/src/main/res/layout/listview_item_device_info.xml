@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        style="@style/icon_size_small"
+        android:layout_marginLeft="12dp"
+        android:layout_centerVertical="true"
+        android:id="@+id/listview_item_device_info_img" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/listview_item_device_info_img"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:id="@+id/listview_item_device_info_subject"
+            style="@style/notosan_regular_Style"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:id="@+id/listview_item_device_info_contents"
+            style="@style/notosan_demilight_Style" />
+    </LinearLayout>
+
+    <ImageButton
+        style="@style/icon_size_small"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/bluetoothdevice_selector"
+        android:visibility="invisible"
+        android:id="@+id/button_bluetooth_set"/>
+
+</RelativeLayout>

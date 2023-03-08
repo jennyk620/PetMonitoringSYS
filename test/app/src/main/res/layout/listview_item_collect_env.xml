@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        style="@style/icon_size_small"
+        android:layout_marginLeft="12dp"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/listview_item_collect_env_image" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="15dp">
+
+        <TextView
+            android:id="@+id/listview_item_collect_env_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:gravity="center_vertical"
+            style="@style/notosan_regular_Style"/>
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/listview_item_collect_env_toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            app:singleSelection="true">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_off"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:clickable="false"
+                android:text="OFF"
+                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_on"
+                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="ON"
+                android:clickable="false"/>
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+    </RelativeLayout>
+
+</LinearLayout>

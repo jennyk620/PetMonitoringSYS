@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_DB_Preview_Dialog"
+    android:layout_margin="20dp"
+    android:padding="20dp"
+    >
+
+    <Spinner
+        android:id="@+id/DB_spinner"
+        style="@style/SpinnerTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fadingEdge="none"
+        android:padding="5dp"
+        android:requiresFadingEdge="none"
+        android:spinnerMode="dropdown"
+        android:splitMotionEvents="false">
+
+    </Spinner>
+
+    <TableLayout
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:stretchColumns="*"
+        android:id="@+id/DB_tablelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </TableLayout>
+
+</LinearLayout>
